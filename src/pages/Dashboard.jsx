@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
-import ContractsTable from './ContractsTable';
+import Sidebar from '../components/Sidebar';
+import Topbar from '../components/Topbar';
+import ContractsTable from '../components/ContractsTable';
 import ContractDetail from './ContractDetail';
 
 const Dashboard = ({ username, onLogout }) => {
