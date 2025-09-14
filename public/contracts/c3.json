@@ -1,0 +1,22 @@
+{
+  "id": "c3",
+  "name": "Software License Agreement",
+  "parties": "TechCorp Inc. & SoftwareCo Ltd.",
+  "start": "2022-12-31",
+  "expiry": "2024-12-31",
+  "status": "Active",
+  "risk": "Low",
+  "clauses": [
+    { "title": "License Scope", "summary": "Unlimited users, single location.", "confidence": 0.92 },
+    { "title": "Support", "summary": "24/7 technical support included.", "confidence": 0.89 },
+    { "title": "Updates", "summary": "Automatic updates and patches.", "confidence": 0.94 }
+  ],
+  "insights": [
+    { "risk": "Low", "message": "License terms are clear and favorable." },
+    { "risk": "Low", "message": "Support terms are comprehensive." }
+  ],
+  "evidence": [
+    { "source": "Section 3.1", "snippet": "License granted for unlimited users at single location.", "relevance": 0.92 },
+    { "source": "Section 7.2", "snippet": "24/7 technical support via phone and email.", "relevance": 0.89 }
+  ]
+}

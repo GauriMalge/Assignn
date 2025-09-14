@@ -1,0 +1,98 @@
+[
+  {
+    "id": "c1",
+    "name": "MSA 2025",
+    "parties": "Microsoft & ABC Corp",
+    "expiry": "2025-12-31",
+    "status": "Active",
+    "risk": "Medium"
+  },
+  {
+    "id": "c2",
+    "name": "Network Services Agreement",
+    "parties": "TelNet & ABC Corp",
+    "expiry": "2025-10-10",
+    "status": "Renewal Due",
+    "risk": "High"
+  },
+  {
+    "id": "c3",
+    "name": "Software License Agreement",
+    "parties": "TechCorp Inc. & SoftwareCo Ltd.",
+    "expiry": "2024-12-31",
+    "status": "Active",
+    "risk": "Low"
+  },
+  {
+    "id": "c4",
+    "name": "Service Level Agreement",
+    "parties": "DataFlow Systems & CloudProvider",
+    "expiry": "2024-06-15",
+    "status": "Renewal Due",
+    "risk": "Medium"
+  },
+  {
+    "id": "c5",
+    "name": "Non-Disclosure Agreement",
+    "parties": "Innovation Labs & PartnerCorp",
+    "expiry": "2023-11-30",
+    "status": "Expired",
+    "risk": "High"
+  },
+  {
+    "id": "c6",
+    "name": "Consulting Services Contract",
+    "parties": "Business Solutions & ClientCorp",
+    "expiry": "2025-03-20",
+    "status": "Active",
+    "risk": "Low"
+  },
+  {
+    "id": "c7",
+    "name": "Equipment Lease Agreement",
+    "parties": "Manufacturing Inc. & LeaseCorp",
+    "expiry": "2024-08-10",
+    "status": "Active",
+    "risk": "Medium"
+  },
+  {
+    "id": "c8",
+    "name": "Distribution Agreement",
+    "parties": "ProductCorp & RetailChain",
+    "expiry": "2024-09-30",
+    "status": "Renewal Due",
+    "risk": "High"
+  },
+  {
+    "id": "c9",
+    "name": "Maintenance Contract",
+    "parties": "ServiceProvider & FacilityCorp",
+    "expiry": "2023-12-15",
+    "status": "Expired",
+    "risk": "High"
+  },
+  {
+    "id": "c10",
+    "name": "Partnership Agreement",
+    "parties": "StartupCorp & InvestorGroup",
+    "expiry": "2025-01-15",
+    "status": "Active",
+    "risk": "Low"
+  },
+  {
+    "id": "c11",
+    "name": "Supply Chain Agreement",
+    "parties": "Manufacturing Ltd. & SupplierCorp",
+    "expiry": "2024-07-25",
+    "status": "Active",
+    "risk": "Medium"
+  },
+  {
+    "id": "c12",
+    "name": "Marketing Services Contract",
+    "parties": "BrandCorp & AgencyGroup",
+    "expiry": "2024-05-30",
+    "status": "Renewal Due",
+    "risk": "Low"
+  }
+]
