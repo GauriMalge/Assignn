@@ -1,0 +1,23 @@
+{
+  "id": "c2",
+  "name": "Network Services Agreement",
+  "parties": "TelNet & ABC Corp",
+  "start": "2022-10-10",
+  "expiry": "2025-10-10",
+  "status": "Renewal Due",
+  "risk": "High",
+  "clauses": [
+    { "title": "Service Level", "summary": "99.9% uptime guarantee.", "confidence": 0.95 },
+    { "title": "Penalties", "summary": "Service credits for downtime.", "confidence": 0.78 },
+    { "title": "Force Majeure", "summary": "Extended coverage for network outages.", "confidence": 0.83 }
+  ],
+  "insights": [
+    { "risk": "High", "message": "Service level penalties may not cover business impact." },
+    { "risk": "Medium", "message": "Force majeure clause is overly broad." },
+    { "risk": "Low", "message": "Renewal terms are clearly defined." }
+  ],
+  "evidence": [
+    { "source": "Section 8.1", "snippet": "Service Level Objective: 99.9% availability.", "relevance": 0.95 },
+    { "source": "Section 12.3", "snippet": "Force majeure includes any network disruption.", "relevance": 0.88 }
+  ]
+}

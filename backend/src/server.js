@@ -17,7 +17,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN?.split(",") || ["http://localhost:5173"],
+    origin: process.env.CORS_ORIGIN?.split(",") || [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "http://localhost:3000",
+      "http://localhost:5175"
+    ],
     credentials: false,
     allowedHeaders: ["Content-Type", "Authorization"]
   })
@@ -40,9 +45,15 @@ app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 
-connectDB()
-  .then(() => app.listen(port, () => console.log(`Server on ${port}`)))
-  .catch((e) => {
-    console.error("DB connect error", e);
-    process.exit(1);
-  });
+// For other platforms (Render, Railway, etc.)
+if (!process.env.VERCEL) {
+  connectDB()
+    .then(() => app.listen(port, () => console.log(`Server on ${port}`)))
+    .catch((e) => {
+      console.error("DB connect error", e);
+      process.exit(1);
+    });
+}
+
+// For Vercel deployment - export the app
+export default app;
