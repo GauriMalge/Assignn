@@ -60,13 +60,12 @@ export async function POST(request) {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    // ✅ Directly pass file (NO fs, NO temp files)
     const transcription = await openai.audio.transcriptions.create({
       file: audioFile,
       model: "gpt-4o-mini-transcribe",
     });
 
-    const transcriptText = transcription.text;
+    const transcriptText = transcription.text?.trim();
 
     if (!transcriptText) {
       throw new Error("No transcript generated");
@@ -87,12 +86,11 @@ export async function POST(request) {
         createdAt: transcript.createdAt,
       },
     });
-
   } catch (error) {
     console.error("Transcription error:", error);
 
     return NextResponse.json(
-      { message: "Transcription failed" },
+      { message: "Could not generate a transcript from this audio." },
       { status: 500 }
     );
   }

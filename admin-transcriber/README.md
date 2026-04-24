@@ -1,12 +1,12 @@
-# Admin Audio Transcriber (Next.js + Better Auth + Gemini + PostgreSQL)
+# Admin Audio Transcriber (Next.js + Better Auth + OpenAI + PostgreSQL)
 
-This is a full-stack Next.js app where a single admin logs in, uploads short audio files (< 1 minute), sends audio to Gemini for transcription, and stores only transcript text in PostgreSQL.
+This is a full-stack Next.js app where a single admin logs in, uploads short audio files (< 1 minute), sends audio to OpenAI for transcription, and stores only transcript text in PostgreSQL.
 
 ## Features
 
 - Better Auth based login/logout
 - Single-admin setup flow (first login creates the only admin account)
-- Audio upload and transcription through Gemini API
+- Audio upload and transcription through OpenAI API
 - Transcript text persisted in PostgreSQL (audio is never stored)
 - Transcript history list on dashboard
 - Railway deployment-ready config
@@ -16,7 +16,7 @@ This is a full-stack Next.js app where a single admin logs in, uploads short aud
 - Next.js (App Router)
 - Better Auth
 - Prisma + PostgreSQL
-- Gemini API (`@google/genai`)
+- OpenAI API (`openai`)
 
 ## Environment variables
 
@@ -25,7 +25,7 @@ Copy `.env.example` to `.env.local` for local development.
 Required variables:
 
 - `DATABASE_URL`
-- `GEMINI_API_KEY`
+- `OPENAI_API_KEY`
 - `BETTER_AUTH_SECRET`
 - `BETTER_AUTH_URL`
 
@@ -70,7 +70,7 @@ npm run dev
 3. Add a **PostgreSQL** service in Railway.
 4. Set environment variables in Railway service:
    - `DATABASE_URL` (from Railway Postgres)
-   - `GEMINI_API_KEY`
+   - `OPENAI_API_KEY`
    - `BETTER_AUTH_SECRET`
    - `BETTER_AUTH_URL` (your Railway public URL)
 5. Railway will use `railway.toml` and run:
@@ -84,6 +84,6 @@ npm run dev
 
 ## Notes
 
-- Audio files are processed in memory and sent to Gemini.
+- Audio files are processed in memory and sent to OpenAI transcription API.
 - Only transcript text and timestamp are saved in database.
 - Client-side checks enforce the "< 1 minute" audio rule before upload.
