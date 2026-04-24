@@ -3,7 +3,6 @@ export const runtime = "nodejs";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import * as fs from "fs";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
@@ -61,30 +60,19 @@ export async function POST(request) {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    // Convert file to buffer
-    const arrayBuffer = await audioFile.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    // Save temp file (Railway supports /tmp)
-    const tempPath = `/tmp/audio-${Date.now()}.mp3`;
-    fs.writeFileSync(tempPath, buffer);
-
-    // 🔥 Transcription (REAL)
+    // ✅ Directly pass file (NO fs, NO temp files)
     const transcription = await openai.audio.transcriptions.create({
-      file: fs.createReadStream(tempPath),
+      file: audioFile,
       model: "gpt-4o-mini-transcribe",
     });
 
     const transcriptText = transcription.text;
 
-    // Delete temp file
-    fs.unlinkSync(tempPath);
-
     if (!transcriptText) {
       throw new Error("No transcript generated");
     }
 
-    // Save in DB
+    // Save to DB
     const transcript = await prisma.transcript.create({
       data: {
         text: transcriptText,
