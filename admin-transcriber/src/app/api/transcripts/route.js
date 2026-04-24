@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import fs from "fs";
+import * as fs from "fs";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
