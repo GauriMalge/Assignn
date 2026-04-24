@@ -6,13 +6,13 @@
   "node": ">=20"
 },
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "eslint",
-    "prisma:generate": "prisma generate",
-    "db:push": "prisma db push"
-  },
+  "dev": "next dev",
+  "build": "prisma generate && next build",
+  "start": "npx prisma db push && next start",
+  "lint": "eslint",
+  "prisma:generate": "prisma generate",
+  "db:push": "prisma db push"
+},
   "dependencies": {
     "@google/genai": "^1.50.1",
     "@prisma/client": "^6.19.3",
